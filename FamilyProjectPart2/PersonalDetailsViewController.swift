@@ -8,22 +8,25 @@
 import UIKit
 
 class PersonalDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var personalImage: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var selectedFamilyMember: FamilyMember?
 
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+        
         // Do any additional setup after loading the view.
+        
+        guard let selectedFamilyMember else { return }
+        
+        nameLabel.text = selectedFamilyMember.name
+        personalImage.image = UIImage(named: selectedFamilyMember.photo)
+        descriptionLabel.text = selectedFamilyMember.description
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

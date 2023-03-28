@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import UIKit
+
+
+struct FamilyMember {
+    let name: String
+    let age: Int
+    let photo: String
+    let description: String 
+}
+
